@@ -28,25 +28,35 @@
         />
 
 </androidx.cardview.widget.CardView>
-
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="255dp">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_marginLeft="30dp"
         android:textSize="16sp"
         android:hint="RECENT SEARCH"
+        android:textColor="#D2D2D2"
         android:fontFamily="@font/gothamrounded_bold"
+
         android:layout_marginTop="40dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="match_parent"
+        android:layout_marginTop="70dp"
         android:id="@+id/recyclerViewRS"
         app:layoutManager="LinearLayoutManager"/>
+</androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_marginLeft="30dp"
+        android:textColor="#D2D2D2"
         android:textSize="16sp"
         android:hint="POPULAR DESTINATION"
         android:fontFamily="@font/gothamrounded_bold"
@@ -54,11 +64,12 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
-        android:layout_height="180dp"
+        android:layout_height="match_parent"
         android:id="@+id/recyclerViewPD"
+        android:layout_marginTop="70dp"
         />
 
-
+    </androidx.cardview.widget.CardView>
 
 
 
