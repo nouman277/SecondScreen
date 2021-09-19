@@ -41,7 +41,8 @@
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:id="@+id/recyclerViewRS" />
+        android:id="@+id/recyclerViewRS"
+        app:layoutManager="LinearLayoutManager"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="45dp"

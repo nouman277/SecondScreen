@@ -10,9 +10,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
-
-
 
 public class adapterRS extends RecyclerView.Adapter<adapterRS.myViewHolder>
 {
@@ -32,11 +32,13 @@ public class adapterRS extends RecyclerView.Adapter<adapterRS.myViewHolder>
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
 
-        // holder.firstName.setText(dataList.get(position).getFirstName());
-
         holder.cityCountryRS.setText(dataList.get(position).getCityCountryRS());
-        holder.numbhotelsRS.setText(dataList.get(position).getNumbhotelsRS());
-        holder.imageRS.setImageLevel(dataList.get(position).getImageRS());
+        holder.numbHotelRS.setText(dataList.get(position).getNumbHotelsRS());
+        holder.imageRS.setImageResource(dataList.get(position).getImageRS());
+
+
+
+
 
 
     }
@@ -48,16 +50,14 @@ public class adapterRS extends RecyclerView.Adapter<adapterRS.myViewHolder>
 
     class myViewHolder extends RecyclerView.ViewHolder
     {
-        TextView cityCountryRS, numbhotelsRS;
-        ImageView imageRS;
+        ImageView imageRS ;
+        TextView  cityCountryRS, numbHotelRS ;
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            // firstName = itemView.findViewById(R.id.firstNameET);
-
+            imageRS= itemView.findViewById(R.id.imageViewRS);
             cityCountryRS=itemView.findViewById(R.id.cityContryTVRS);
-            numbhotelsRS=itemView.findViewById(R.id.numbHotelsRS);
-            imageRS=itemView.findViewById(R.id.imageViewRS);
+            numbHotelRS=itemView.findViewById(R.id.numbHotelsRS);
 
         }
     }

@@ -1,10 +1,20 @@
 package com.example.secondscreen;
 
+import android.widget.ImageView;
+
 public class model_pd {
+
 
     int imagePD;
     String cityCountryPD;
-    String numbhotelsPD;
+    String numbHotelsPD;
+
+    public model_pd(int imagePD, String cityCountryPD, String numbHotelsPD) {
+        this.imagePD = imagePD;
+        this.cityCountryPD = cityCountryPD;
+        this.numbHotelsPD = numbHotelsPD;
+    }
+
 
     public int getImagePD() {
         return imagePD;
@@ -22,19 +32,11 @@ public class model_pd {
         this.cityCountryPD = cityCountryPD;
     }
 
-    public String getNumbHotels() {
-        return numbhotelsPD;
+    public String getNumbHotelsPD() {
+        return numbHotelsPD;
     }
 
-    public void setNumbHotels(String numbHotels) {
-        this.numbhotelsPD = numbHotels;
+    public void setNumbHotelsPD(String numbHotelsPD) {
+        this.numbHotelsPD = numbHotelsPD;
     }
-
-    public model_pd(int imagePD, String cityCountryPD, String numbHotels) {
-        this.imagePD = imagePD;
-        this.cityCountryPD = cityCountryPD;
-        this.numbhotelsPD = numbHotels;
-    }
-
-
 }

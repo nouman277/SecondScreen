@@ -8,44 +8,57 @@ import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QuerySnapshot;
+
 import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-ArrayList<model_pd> model_pdArrayList;
-ArrayList<model_rs> model_rsArrayList;
-adapterRS adapterRSV;
-adapterPD adapterPDV;
-RecyclerView RVPD, RVRS;
+    RecyclerView RVPD, RVRS;
+    ArrayList<model_pd> dataListPD;
+    ArrayList<model_rs> dataListRS;
+    adapterRS adapterRSV;
+    adapterPD adapterPDV;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        RVPD=findViewById(R.id.recyclerViewPD);
-        RVRS=findViewById(R.id.recyclerViewRS);
 
-        model_rsArrayList=new ArrayList<>();
+        dataListRS=new ArrayList<>();
+        dataListRS.add(new model_rs(R.drawable.ic_language_24px,"Islamabad, Pakistan","227 Hotels"));
+        dataListRS.add(new model_rs(R.drawable.ic_language_24px,"Karachi, Pakistan","350 Hotels"));
+        dataListRS.add(new model_rs(R.drawable.home,"Karachi Hyatt Hotel","9.6/10"));
 
-        model_rsArrayList.add(new model_rs(R.drawable.ic_language_24px,"Islamabad, Pakistan","227 Hotels"));
-        model_rsArrayList.add(new model_rs(R.drawable.ic_language_24px,"Karachi, Pakistan","350 Hotels"));
-        model_rsArrayList.add(new model_rs(R.drawable.home,"Islamabad, Pakistan","227 Hotels"));
+        RVRS = findViewById(R.id.recyclerViewRS);
+        RVRS = (RecyclerView) findViewById(R.id.recyclerViewRS);
+        RVRS.setLayoutManager(new LinearLayoutManager(this));
 
-        model_pdArrayList=new ArrayList<>();
-        model_pdArrayList.add(new model_pd(R.drawable.star__1_,"Islamabad, Pakistan","227 Hotels"));
-        model_pdArrayList.add(new model_pd(R.drawable.star__1_,"Karachi, Pakistan","350 Hotels"));
-        model_pdArrayList.add(new model_pd(R.drawable.star__1_,"Swat, Pakistan","70 Hotels"));
-//        dataList=new ArrayList<>();
-//
-//       adapter=new myAdapter(dataList);
-        model_rsArrayList = new ArrayList<>();
-        adapterRSV=new adapterRS(model_rsArrayList);
+        adapterRSV = new adapterRS(dataListRS);
         RVRS.setAdapter(adapterRSV);
+        adapterRSV.notifyDataSetChanged();
 
-        model_pdArrayList = new ArrayList<>();
-        adapterPDV=new adapterPD(model_pdArrayList);
+
+
+        dataListPD=new ArrayList<>();
+        dataListPD.add(new model_pd(R.drawable.star__1_,"Islamabad, Pakistan","227 Hotels"));
+        dataListPD.add(new model_pd(R.drawable.star__1_,"Karachi, Pakistan","350 Hotels"));
+        dataListPD.add(new model_pd(R.drawable.star__1_,"Swat, Pakistan","70 Hotels"));
+
+        RVPD = findViewById(R.id.recyclerViewPD);
+        RVPD = (RecyclerView) findViewById(R.id.recyclerViewPD);
+        RVPD.setLayoutManager(new LinearLayoutManager(this));
+
+        adapterPDV = new adapterPD(dataListPD);
         RVPD.setAdapter(adapterPDV);
+        adapterRSV.notifyDataSetChanged();
+
 
     }
 }
